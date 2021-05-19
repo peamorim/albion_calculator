@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  value: 1.5
+  refined: 1.5
+  refine_fee: 1
+  transmutation_fee: 1
+  url_image: MyString
+
+two:
+  item: MyString
+  value: 1.5
+  refined: 1.5
+  refine_fee: 1
+  transmutation_fee: 1
+  url_image: MyString

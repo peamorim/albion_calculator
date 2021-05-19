@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @refine_calculator.item %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @refine_calculator.value %>
+</p>
+
+<p>
+  <strong>Refined:</strong>
+  <%= @refine_calculator.refined %>
+</p>
+
+<p>
+  <strong>Refine fee:</strong>
+  <%= @refine_calculator.refine_fee %>
+</p>
+
+<p>
+  <strong>Transmutation fee:</strong>
+  <%= @refine_calculator.transmutation_fee %>
+</p>
+
+<p>
+  <strong>Url image:</strong>
+  <%= @refine_calculator.url_image %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @refine_calculator.tax %>
+</p>
+
+<%= link_to 'Edit', edit_refine_calculator_path(@refine_calculator) %> |
+<%= link_to 'Back', refine_calculators_path %>

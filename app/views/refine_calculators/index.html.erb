@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Refine Calculators</h1>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Valor de Mercador</th>
+      <th>Refinado</th>
+      <th>Taxa</th>
+      <th>Custo</th>
+      <th>Retorno</th>
+      <th>Lucro</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @refine_calculators.each do |refine_calculator| %>
+      <tr>
+        <td><%= refine_calculator.item %></td>
+        <td><input type="text" placeholder=<%= refine_calculator.value %>></td>
+        <td><input type="text" placeholder=<%= refine_calculator.refined %>></td>
+        <td><%= refine_calculator.refine_fee %></td>
+        <td><%= refine_calculator.refine_fee * refine_calculator.value %></td>
+        <td><%= refine_calculator.refine_fee %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+---------------------------------------
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Value</th>
+      <th>Refined</th>
+      <th>Refine fee</th>
+      <th>Transmutation fee</th>
+      <th>Url image</th>
+      <th>Valor Calculado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @refine_calculators.each do |refine_calculator| %>
+      <tr>
+        <td><%= refine_calculator.item %></td>
+        <td><%= refine_calculator.value %></td>
+        <td><%= refine_calculator.refined %></td>
+        <td id="<%= refine_calculator.id %>_value"><%= refine_calculator.refine_fee %></td>
+        <td><%= refine_calculator.transmutation_fee %></td>
+        <td><%= refine_calculator.url_image %></td>
+        <td><%= ((refine_calculator.refine_fee.to_f / 100) * (100 - refine_calculator.tax.to_f)).to_s %></td>
+        <td><%= link_to 'Show', refine_calculator %></td>
+        <td><%= link_to 'Edit', edit_refine_calculator_path(refine_calculator) %></td>
+        <td><%= link_to 'Destroy', refine_calculator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Refine Calculator', new_refine_calculator_path %>

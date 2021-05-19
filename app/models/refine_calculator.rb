@@ -1,0 +1,2 @@
+class RefineCalculator < ApplicationRecord
+end

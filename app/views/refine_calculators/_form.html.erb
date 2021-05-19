@@ -1,0 +1,52 @@
+<%= form_with(model: refine_calculator) do |form| %>
+  <% if refine_calculator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(refine_calculator.errors.count, "error") %> prohibited this refine_calculator from being saved:</h2>
+
+      <ul>
+        <% refine_calculator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item %>
+    <%= form.text_field :item %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refined %>
+    <%= form.text_field :refined %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refine_fee %>
+    <%= form.number_field :refine_fee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transmutation_fee %>
+    <%= form.number_field :transmutation_fee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url_image %>
+    <%= form.text_field :url_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tax %>
+    <%= form.text_field :tax %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
